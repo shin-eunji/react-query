@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 function App () {
 
@@ -21,6 +21,13 @@ function App () {
       <Input  />
       <Input  />
       <Input  />
+
+      <BoxAnimation>
+        <span>😁</span>
+      </BoxAnimation>
+      <BoxAnimationTwo />
+
+
     </Container>
   );
 }
@@ -51,7 +58,55 @@ const Btn = styled.button`
 `;
 const Input = styled.input.attrs({ required: true, minLength: 10 })`
   background: tomato;
-    
+`;
+const rotationAnimation = keyframes`
+  from {
+    transform: rotate(0deg);
+    border-radius: 0;
+  }
+  to {
+    transform: rotate(360deg);
+    border-radius: 100px;
+  }
+`;
+
+const rotationAnimationTwo = keyframes`
+  0% {
+    transform: rotate(0deg);
+    border-radius: 0;
+  }
+  50% {
+    transform: rotate(360deg);
+    border-radius: 100px;
+  }
+  100% {
+    transform: rotate(0deg);
+    border-radius: 0;
+  }
+`;
+const BoxAnimation = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  background: cornflowerblue;
+  animation: ${rotationAnimation} 2s linear infinite;
+  span {
+    font-size: 30px;
+    &:hover {
+      font-size: 40px;
+    }
+    &:active {
+      opacity: 0;
+    }
+  }
+`;
+const BoxAnimationTwo = styled.div`
+  width: 100px;
+  height: 100px;
+  background: cornflowerblue;
+  animation: ${rotationAnimationTwo} 2s linear infinite;
 `;
 
 export default App;
