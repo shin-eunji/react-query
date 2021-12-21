@@ -23,11 +23,9 @@ function App () {
       <Input  />
 
       <BoxAnimation>
-        <span>😁</span>
+        <Emoji as="p">😁</Emoji>
       </BoxAnimation>
       <BoxAnimationTwo />
-
-
     </Container>
   );
 }
@@ -84,6 +82,12 @@ const rotationAnimationTwo = keyframes`
     border-radius: 0;
   }
 `;
+const Emoji = styled.span`
+  font-size: 30px;
+  &:active {
+    opacity: 0;
+  }
+`;
 const BoxAnimation = styled.div`
   display: flex;
   align-items: center;
@@ -92,14 +96,8 @@ const BoxAnimation = styled.div`
   height: 100px;
   background: cornflowerblue;
   animation: ${rotationAnimation} 2s linear infinite;
-  span {
-    font-size: 30px;
-    &:hover {
-      font-size: 40px;
-    }
-    &:active {
-      opacity: 0;
-    }
+  ${Emoji}:hover {
+    font-size: 40px;
   }
 `;
 const BoxAnimationTwo = styled.div`
