@@ -31,3 +31,9 @@ const Btn = styled.button`
 <button class="sc-iBPTIC">Log in</button>
 <a class="sc-iBPTIC">Log out</a>
 ```
+
+### typescript
+```git
+npm install @types/styled-components
+
+```
