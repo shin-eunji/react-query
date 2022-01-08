@@ -1,7 +1,14 @@
 import { DefaultTheme } from 'styled-components';
 
 export const theme: DefaultTheme = {
+<<<<<<< HEAD
   bgColor: "white",
   textColor: "black",
   btnColor: "tomato"
 };
+=======
+  bgColor: "#2f3640",
+  textColor: "#f5f6fa",
+  accentColor: "#44bd32",
+};
+>>>>>>> query
