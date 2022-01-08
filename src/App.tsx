@@ -1,52 +1,72 @@
-import React, { useState } from "react";
-import styled from 'styled-components';
-import {css} from "styled-components";
-// import Circle from './Circle';
+import { createGlobalStyle } from "styled-components";
+import Router from "./Router";
 
-function App () {
-
-  const [value, setValue] = useState("")
-  const onChange = (e: React.FormEvent<HTMLInputElement>) => {
-    console.log(e.currentTarget.value);
-    const { currentTarget: {value} } = e;
-    setValue(value)
-  };
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log("hello", value);
-  };
-
-  const Container = styled.div`
-    background: ${props => props.theme.bgColor};
-  `;
-  const H1 = styled.h1`
+const GlobalStyle = createGlobalStyle`
+  //@import url('')
+  html, body, div, span, applet, object, iframe,
+  h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+  a, abbr, acronym, address, big, cite, code,
+  del, dfn, em, img, ins, kbd, q, s, samp,
+  small, strike, strong, sub, sup, tt, var,
+  b, u, i, center,
+  dl, dt, dd, ol, ul, li,
+  fieldset, form, label, legend,
+  table, caption, tbody, tfoot, thead, tr, th, td,
+  article, aside, canvas, details, embed, 
+  figure, figcaption, footer, header, hgroup, 
+  menu, nav, output, ruby, section, summary,
+  time, mark, audio, video {
+    tmargin: 0;
+    tpadding: 0;
+    tborder: 0;
+    tfont-size: 100%;
+    tfont: inherit;
+    tvertical-align: baseline;
+  }
+  /* HTML5 display-role reset for older browsers */
+  article, aside, details, figcaption, figure, 
+  footer, header, hgroup, menu, nav, section {
+    tdisplay: block;
+  }
+  body {
+    tline-height: 1;
+  }
+  ol, ul {
+    tlist-style: none;
+  }
+  blockquote, q {
+    tquotes: none;
+  }
+  blockquote:before, blockquote:after,
+  q:before, q:after {
+    tcontent: '';
+    tcontent: none;
+  }
+  table {
+    tborder-collapse: collapse;
+    tborder-spacing: 0;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: ${props => props.theme.bgColor};
     color: ${props => props.theme.textColor};
-  `;
-  const Button = styled.button`
-    background: ${props => props.theme.btnColor};
-    color: ${props => props.theme.textColor};
-  `;
+  }
+  a {
+    text-decoratoin: none;
+  }
+  
+`;
 
+function App() {
   return (
-    <div>
-      <form onSubmit={onSubmit}>
-        <input value={value}
-               onChange={onChange}
-               type="text"
-               placeholder="username"
-        />
-        <button>Log in</button>
-      </form>
-
-      <Container>
-        <H1>protected</H1>
-        <Button>Log in</Button>
-      </Container>
-      {/*<Circle bgColor={"teal"} borderColor={"yellow"} />*/}
-      {/*<Circle text={"Title"} bgColor={"tomato"} />*/}
-
-    </div>
-  );
+    <>
+      <GlobalStyle />
+      <Router />
+    </>
+  )
 }
 
 export default App;
