@@ -19,7 +19,9 @@ interface InterfaceHistorical {
 
 function Chart ({ coinId }: CharProps) {
 
-    const { isLoading, data } = useQuery<InterfaceHistorical[]>(["ohlcv", coinId], () => fetchCoinHistory(coinId));
+    const { isLoading, data } = useQuery<InterfaceHistorical[]>(["ohlcv", coinId], () => fetchCoinHistory(coinId),
+      {refetchInterval: 10000,
+      })
 
     return (
       <div>
@@ -57,24 +59,19 @@ function Chart ({ coinId }: CharProps) {
                            show: false,
                          },
                          xaxis: {
-                           axisBorder: {
-                             show: false,
-                           },
-                           axisTicks: {
-                             show: false,
-                           },
-                           labels: {
-                             show: false
-                           },
-                           categories: data.map(price => price.time_close)
+                           axisBorder: { show: false },
+                           axisTicks: { show: false },
+                           labels: { show: false },
+                           type: "datetime",
+                           categories: data?.map(price => price.time_close)
                          },
                          fill: {
                            type: "gradient",
                            gradient: {
-                             gradientToColors: ["blue"], stops: [0, 100]
+                             gradientToColors: ["#0be881"], stops: [0, 100]
                            }
                          },
-                         color: ["red"],
+                         colors: ["#0fbcf9"],
                          tooltip: {
                            y: {
                              formatter: (value) => `$ ${value.toFixed(2)}`

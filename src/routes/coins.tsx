@@ -2,6 +2,7 @@ import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
 import { fetchCoins } from "../api";
 import styled from "styled-components";
+import {Helmet} from "react-helmet";
 
 const Title = styled.h1`
 font-size: 48px;
@@ -64,6 +65,7 @@ function Coins() {
 
   return (
     <Container>
+      <Helmet><title>코인</title></Helmet>
       <Header>
         <Title>코인</Title>
       </Header>
