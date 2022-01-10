@@ -1,8 +1,8 @@
 # React
-
-> 현재 딱 1년차로 잊어버렸던 혹은 제대로 알지 못했던 React를 다시 복습하며 디벨롭 해보는 시간입니다.
-> 
-> 목표: 2021년도 마무리를 위해 React 전체 커리큘럼을 한 번 더 복습.
+ 
+> 목표: 2021년도 마무리를 위해 React 전체 커리큘럼을 한 번 더 복습하는 방법입니다.
+> 스스로 학습 방향을 잡고 더 나아가 다른 라이브러리를 접해보는 시간입니다. 
+>
 > 일정: 2021년 1월 1일 ~ 1월 10일 (10일간)
 
 ## Tech
@@ -13,7 +13,7 @@
 - recoil
 
 
-## styled-components (2021.12월 21일)
+## styled-components
 - [x] Styled-components
 - why?
 - first style components
@@ -59,12 +59,11 @@ import { ReactQueryDevtools } from "react-query/devtools";
 ```
 
 ### Recoil
-Recoil을 이용해서 state Management하는 방법
+Recoil을 이용해서 state Management하는 방법 입니다.
 페이스북에서 만들었습니다.
-state관리 라이브러리들 중의 하나이며, 미니멀하고 간단해서 이해도도 쉽고 쓰기 좋다.
+state관리 라이브러리들 중의 하나이며, 미니멀하고 간단해서 이해도도 쉽고 쓰기 좋습니다.
 
-Redux와 비슷한 관계로서
-하나의 저장소에 담아 상태를 가져올 수 있다.
+Redux와 비슷한 관계로서 하나의 저장소에 담아 상태를 가져올 수 있습니다.
 
 
 
