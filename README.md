@@ -56,3 +56,17 @@ import { ReactQueryDevtools } from "react-query/devtools";
 ...추가
 <ReactQueryDevtools initialIsOpen={true} />
 ```
+
+### Recoil
+Recoil을 이용해서 state Management하는 방법
+페이스북에서 만들었습니다.
+state관리 라이브러리들 중의 하나이며, 미니멀하고 간단해서 이해도도 쉽고 쓰기 좋다.
+
+Redux와 비슷한 관계로서
+하나의 저장소에 담아 상태를 가져올 수 있다.
+
+
+
+
+
+

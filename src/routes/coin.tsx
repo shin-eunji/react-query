@@ -136,7 +136,6 @@ interface priceData {
 
 }
 
-
 function Coin() {
   const priceMatch = useRouteMatch("/:coinId/price");
   const chartMatch = useRouteMatch("/:coinId/chart");
